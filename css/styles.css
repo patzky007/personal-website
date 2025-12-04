@@ -1,0 +1,517 @@
+html, body {
+  height: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset dan font dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+/* Kontainer umum agar sejajar */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Header navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+}
+.logo .bold {
+  font-weight: 700;
+}
+.logo .regular {
+  font-weight: 400;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #888;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #111;
+  color: white;
+  padding: 120px 0 60px;
+}
+
+/* Animasi scroll-trigger */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default state sebelum terlihat */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* State aktif saat terlihat di viewport */
+.animate-on-scroll.visible {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.hero-text h1 .highlight {
+  color: #BF5B67;
+  font-weight: 700;
+}
+
+.hero-text h2 {
+  font-size: 72px;
+  font-weight: 700;
+  color: #BF5B67;
+  line-height: 1.1;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 20px;
+  color: white;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+/* Section Title */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+
+.section-title h3 {
+  font-size: 72px;
+  font-weight: 700;
+  color: #BF5B67;
+  margin: 0;
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #BF5B67;
+}
+
+/* About Section */
+.about {
+  background-color: #111;
+  color: white;
+  padding: 60px 0;
+}
+
+.about-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #ddd;
+  text-align: left;
+}
+
+/* Work Section */
+.work {
+  background-color: #111;
+  color: white;
+  padding: 60px 0;
+}
+
+.work-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #ddd;
+  text-align: left;
+}
+
+/* Project Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h4 {
+  font-size: 22px;
+  color: #BF5B67;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.project-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #BF5B67;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: #70373d;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #111;
+  color: white;
+  padding: 60px 0;
+}
+
+.contact-container p {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+.contact-form form {
+  text-align: center;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin: 0 auto;
+  background-color: #BF5B67;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #70373d;
+  transform: translateY(-3px);
+}
+
+/* Formspree Feedback */
+#form-status {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-success {
+  color: #BF5B67;
+}
+
+.form-error {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon.linkedin { background-color: #0077b5; }
+.social-icon.instagram { background-color: #e1306c; }
+.social-icon.facebook { background-color: #1877f2; }
+.social-icon.email { background-color: #BF5B67; }
+.social-icon.github { background-color: #333; }
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.2);
+}
+
+/* Bottom Section */
+.bottom-section {
+  background-color: #111;
+  text-align: center;
+  padding: 20px 20px;
+  margin-top: 20px;
+}
+
+/* Tagline */
+.closing-tagline {
+  font-size: 28px;
+  font-weight: 700;
+  color: #BF5B67;
+  margin: 10px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #BF5B67;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cta-button:hover {
+  background-color: #70373d;
+  transform: translateY(-3px);
+}
+
+.thanks-line {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 200;
+}
+
+/* Copyright */
+.copyright {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.copyright hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin-bottom: 10px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #BF5B67;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* muncul saat scroll */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #70373d;
+  transform: translateY(-3px);
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 48px;
+  }
+
+  .hero-image img {
+    max-width: 250px;
+  }
+
+  .about,
+  .work,
+  .contact,
+  .bottom-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title h3 {
+    font-size: 48px;
+  }
+
+  .section-line {
+    width: 100%;
+  }
+
+  .about-container p,
+  .work-container p,
+  .contact-container p {
+    text-align: center;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .closing-tagline {
+    font-size: 22px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .thanks-line {
+    font-size: 14px;
+  }
+}
